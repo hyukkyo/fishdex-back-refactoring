@@ -24,7 +24,7 @@ jobs:
             cd ~/fishdex-backend
 
             # 리포지토리 pull
-            git pull https://hyukkyo:${{ secrets.GIT_TOKEN }}@github.com:hyukkyo/fishdex-backend.git
+            git pull https://hyukkyo:${{ secrets.GIT_TOKEN }}@github.com/hyukkyo/fishdex-backend.git
 
             # 의존성 설치 및 애플리케이션 시작
             cd nodejs
