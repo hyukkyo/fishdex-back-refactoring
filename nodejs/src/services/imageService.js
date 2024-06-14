@@ -27,5 +27,5 @@ exports.getImagesByCategory = async (usercode, category) => {
   if (results.length === 0) {
     throw new Error("결과값이 없습니다. 도감을 채워주세요.");
   }
-  return results.map((result) => result.url);
+  return results;
 };

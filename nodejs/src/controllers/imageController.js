@@ -25,8 +25,8 @@ exports.getImagesByCategory = async (req, res) => {
   const category = req.params.category;
 
   try {
-    const urls = await imageService.getImagesByCategory(usercode, category);
-    return res.status(200).json(urls);
+    const image = await imageService.getImagesByCategory(usercode, category);
+    return res.status(200).json(image);
   } catch (error) {
     if (error.message === "결과값이 없습니다. 도감을 채워주세요.") {
       return res.status(401).json({ message: error.message });
