@@ -12,6 +12,7 @@ exports.uploadImage = async (
     "INSERT INTO images (usercode, url, category, weight, length, location) VALUES (?, ?, ?, ?, ?, ?)",
     [usercode, url, category, weight, length, location]
   );
+  console.log("repository" + result);
   return result;
 };
 
