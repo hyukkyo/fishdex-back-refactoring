@@ -1,9 +1,16 @@
 const pool = require("../config/database");
 
-exports.uploadImage = async (usercode, url, category) => {
+exports.uploadImage = async (
+  usercode,
+  url,
+  category,
+  weight,
+  length,
+  location
+) => {
   const [result] = await pool.query(
-    "INSERT INTO images (usercode, url, category) VALUES (?, ?, ?)",
-    [usercode, url, category]
+    "INSERT INTO images (usercode, url, category, weight, length, location) VALUES (?, ?, ?)",
+    [usercode, url, category, weight, length, location]
   );
   return result;
 };

@@ -1,10 +1,17 @@
 const imageService = require("../services/imageService");
 
 exports.uploadImage = async (req, res) => {
-  const { usercode, url, category } = req.body;
+  const { usercode, url, category, weight, length, location } = req.body;
 
   try {
-    const result = await imageService.uploadImage(usercode, url, category);
+    const result = await imageService.uploadImage(
+      usercode,
+      url,
+      category,
+      weight,
+      length,
+      location
+    );
     return res.status(200).json(result);
   } catch (error) {
     return res.status(500).json({ message: "Internal server error" });

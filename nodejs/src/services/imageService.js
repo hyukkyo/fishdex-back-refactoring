@@ -1,7 +1,21 @@
 const imageRepository = require("../repositories/imageRepository");
 
-exports.uploadImage = async (usercode, url, category) => {
-  await imageRepository.uploadImage(usercode, url, category);
+exports.uploadImage = async (
+  usercode,
+  url,
+  category,
+  weight,
+  length,
+  location
+) => {
+  await imageRepository.uploadImage(
+    usercode,
+    url,
+    category,
+    weight,
+    length,
+    location
+  );
   return { message: "이미지 등록 완료" };
 };
 
