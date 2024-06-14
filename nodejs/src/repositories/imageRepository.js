@@ -17,7 +17,7 @@ exports.uploadImage = async (
 
 exports.findImagesByCategory = async (usercode, category) => {
   const [results] = await pool.query(
-    "SELECT url FROM images WHERE usercode = ? AND category = ?",
+    "SELECT * FROM images WHERE usercode = ? AND category = ?",
     [usercode, category]
   );
   return results;
