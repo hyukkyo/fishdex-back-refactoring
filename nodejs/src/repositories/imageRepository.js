@@ -9,7 +9,7 @@ exports.uploadImage = async (
   location
 ) => {
   const [result] = await pool.query(
-    "INSERT INTO images (usercode, url, category, weight, length, location) VALUES (?, ?, ?)",
+    "INSERT INTO images (usercode, url, category, weight, length, location) VALUES (?, ?, ?, ?, ?, ?)",
     [usercode, url, category, weight, length, location]
   );
   return result;
