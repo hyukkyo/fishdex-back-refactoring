@@ -23,3 +23,11 @@ exports.findImagesByCategory = async (usercode, category) => {
   );
   return results;
 };
+
+exports.countImagesByUsercode = async (usercode) => {
+  const [count] = await pool.query(
+    "SELECT category, COUNT(*) AS count FROM images WHERE usercode = ? GROUP BY category",
+    [usercode]
+  );
+  return count;
+};

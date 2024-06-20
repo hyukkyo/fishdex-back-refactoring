@@ -34,3 +34,14 @@ exports.getImagesByCategory = async (req, res) => {
     return res.status(500).json({ message: "Internal server error" });
   }
 };
+
+exports.getCountByUsercode = async (req, res) => {
+  const { usercode } = req.body;
+
+  try {
+    const count = await imageService.getCountByUsercode(usercode);
+    return res.status(200).json(count);
+  } catch (error) {
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};

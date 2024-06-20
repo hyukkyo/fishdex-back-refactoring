@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post("/upload", imageController.uploadImage);
 router.get("/:category", imageController.getImagesByCategory);
+router.get("/count", imageController.getCountByUsercode);
 
 module.exports = router;
