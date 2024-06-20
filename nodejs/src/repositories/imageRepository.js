@@ -29,5 +29,6 @@ exports.countImagesByUsercode = async (usercode) => {
     "SELECT category, COUNT(*) AS count FROM images WHERE usercode = ? GROUP BY category",
     [usercode]
   );
+  console.log("repository" + count);
   return count;
 };

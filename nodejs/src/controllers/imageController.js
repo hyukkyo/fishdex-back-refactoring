@@ -12,7 +12,7 @@ exports.uploadImage = async (req, res) => {
       length,
       location
     );
-    console.log("controllers" + result);
+    console.log("controller" + result);
     return res.status(200).json(result);
   } catch (error) {
     console.log(error);
@@ -40,8 +40,10 @@ exports.getCountByUsercode = async (req, res) => {
 
   try {
     const count = await imageService.getCountByUsercode(usercode);
+    console.log("controller" + count);
     return res.status(200).json(count);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ message: "Internal server error" });
   }
 };

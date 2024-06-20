@@ -33,5 +33,6 @@ exports.getImagesByCategory = async (usercode, category) => {
 
 exports.getCountByUsercode = async (usercode) => {
   const count = await imageRepository.countImagesByUsercode(usercode);
+  console.log("service" + count);
   return count;
 };
